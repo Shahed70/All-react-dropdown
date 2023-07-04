@@ -228,22 +228,52 @@ import React, { useState } from 'react';
 
 const menuItemsData = [
   {
-    label: 'Home',
+    label: "Home",
+    to: "/",
     isOpen: false,
   },
   {
-    label: 'About',
-    submenus: ['Submenu 1', 'Submenu 2', 'Submenu 3'],
+    label: "About",
+    to: "/about",
+    submenus: [
+      {
+        label: "Link 1",
+        to: "/link1",
+      },
+      {
+        label: "Link 2",
+        to: "/link2",
+      },
+      {
+        label: "Link 3",
+        to: "/link3",
+      },
+    ],
     isOpen: false,
   },
   {
-    label: 'Contact',
+    label: "Contact",
+    to: "/contact",
     isOpen: false,
   },
 
   {
-    label: 'About2',
-    submenus: ['Submenu 1', 'Submenu 2', 'Submenu 3'],
+    label: "About2",
+    to: "/about2",
+    submenus: [
+      {
+        label: "Link 1",
+        to: "/link1",
+      },
+      {
+        label: "Link 2",
+        to: "/link2",
+      },
+      {
+        label: "Link 3",
+        to: "/link3",
+      },
+    ],
     isOpen: false,
   },
 ];
@@ -275,7 +305,7 @@ const NavMenu = () => {
             {menuItem.isOpen && menuItem.submenus && (
               <ul className="dropdown">
                 {menuItem.submenus.map((submenu, subIndex) => (
-                  <li onClick={() => toggleMenu(index)} key={subIndex}>{submenu}</li>
+                  <li onClick={() => toggleMenu(index)} key={subIndex}>{submenu.label}</li>
                 ))}
               </ul>
             )}
