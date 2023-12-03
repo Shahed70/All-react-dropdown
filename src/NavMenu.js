@@ -1,7 +1,4 @@
-
-// this all menu have dropdown 
-
-
+// this all menu have dropdown
 
 // import React, { useState } from 'react';
 // //import './NavMenu.css'; // Import the CSS file for styling
@@ -62,15 +59,9 @@
 
 // export default NavMenu;
 
+// this all menu have dropdown
 
-// this all menu have dropdown 
-
-
-
-
-
-
-// this only two menu have dropdown 
+// this only two menu have dropdown
 
 // import React, { useState } from 'react';
 // //import './NavMenu.css'; // Import the CSS file for styling
@@ -137,13 +128,9 @@
 
 // export default NavMenu;
 
+// this only two menu have dropdown
 
-// this only two menu have dropdown 
-
-
-
-
-// this dropdown doesnot have extra button next to it 
+// this dropdown doesnot have extra button next to it
 
 // import React, { useState } from 'react';
 // //import './NavMenu.css'; // Import the CSS file for styling
@@ -174,14 +161,14 @@
 //   const [menuItems, setMenuItems] = useState(menuItemsData);
 
 //   const toggleMenu = (index) => {
-   
+
 //     console.log(index)
 
 //     const updatedMenuItems = menuItems.map((menuItem, i) => ({
 
 //       ...menuItem,
 //       isOpen: i === index ? !menuItem.isOpen : false,
-      
+
 //     }));
 //     setMenuItems(updatedMenuItems);
 //   };
@@ -215,11 +202,7 @@
 
 // export default NavMenu;
 
-// this dropdown doesnot have extra button next to it 
-
-
-
-
+// this dropdown doesnot have extra button next to it
 
 // This submenu disappear When clik on submenu too
 
@@ -228,50 +211,50 @@ import React, { useState } from 'react';
 
 const menuItemsData = [
   {
-    label: "Home",
-    to: "/",
+    label: 'Home',
+    to: '/',
     isOpen: false,
   },
   {
-    label: "About",
-    to: "/about",
+    label: 'About',
+    to: '/about',
     submenus: [
       {
-        label: "Link 1",
-        to: "/link1",
+        label: 'Link 1',
+        to: '/link1',
       },
       {
-        label: "Link 2",
-        to: "/link2",
+        label: 'Link 2',
+        to: '/link2',
       },
       {
-        label: "Link 3",
-        to: "/link3",
+        label: 'Link 3',
+        to: '/link3',
       },
     ],
     isOpen: false,
   },
   {
-    label: "Contact",
-    to: "/contact",
+    label: 'Contact',
+    to: '/contact',
     isOpen: false,
   },
 
   {
-    label: "About2",
-    to: "/about2",
+    label: 'About2',
+    to: '/about2',
     submenus: [
       {
-        label: "Link 1",
-        to: "/link1",
+        label: 'Link 1',
+        to: '/link1',
       },
       {
-        label: "Link 2",
-        to: "/link2",
+        label: 'Link 2',
+        to: '/link2',
       },
       {
-        label: "Link 3",
-        to: "/link3",
+        label: 'Link 3',
+        to: '/link3',
       },
     ],
     isOpen: false,
@@ -295,7 +278,9 @@ const NavMenu = () => {
         {menuItems.map((menuItem, index) => (
           <li key={index}>
             <div className="menu-item">
-              <a href="#" onClick={() => toggleMenu(index)}>{menuItem.label} </a>
+              <a href={`${menuItem.to}`} onClick={() => toggleMenu(index)}>
+                {menuItem.label}{' '}
+              </a>
               {/* {menuItem.submenus && (
                 <button className="toggle-btn" onClick={() => toggleMenu(index)}>
                   {menuItem.isOpen ? '-' : '+'}
@@ -305,7 +290,9 @@ const NavMenu = () => {
             {menuItem.isOpen && menuItem.submenus && (
               <ul className="dropdown">
                 {menuItem.submenus.map((submenu, subIndex) => (
-                  <li onClick={() => toggleMenu(index)} key={subIndex}>{submenu.label}</li>
+                  <li onClick={() => toggleMenu(index)} key={subIndex}>
+                    {submenu.label}
+                  </li>
                 ))}
               </ul>
             )}
